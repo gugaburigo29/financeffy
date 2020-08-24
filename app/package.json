@@ -16,7 +16,8 @@
     "typescript": "~3.7.2",
     "framer-motion": "^2.3.0",
     "react-router-dom": "^5.2.0",
-    "fontsource-roboto": "^2.2.6"
+    "fontsource-roboto": "^2.2.6",
+    "react-dropzone": "^11.0.3"
   },
   "devDependencies": {
     "@types/axios": "^0.14.0",
@@ -25,7 +26,8 @@
     "@types/react": "^16.9.0",
     "@types/react-dom": "^16.9.0",
     "@types/react-redux": "^7.1.9",
-    "@types/react-router-dom": "^5.1.5"
+    "@types/react-router-dom": "^5.1.5",
+    "@types/react-dropzone": "^5.1.0"
   },
   "scripts": {
     "start": "react-scripts start",

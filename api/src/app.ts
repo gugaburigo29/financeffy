@@ -26,8 +26,8 @@ class App {
 
     private startBeforeMiddlewares() {
         this.app.use(cors())
-        this.app.use(Express.urlencoded({ extended: false }));
-        this.app.use(Express.json());
+        this.app.use(Express.urlencoded({extended: false}));
+        this.app.use(Express.json({limit: '50mb'}));
     }
 
     private startAfterMiddlewares() {

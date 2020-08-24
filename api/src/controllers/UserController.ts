@@ -38,6 +38,16 @@ class UserController {
             where: {email, password}
         });
 
+        if (!user) {
+            return ResponseUtils
+                .of(response)
+                .create({
+                    message: 'Nenhum usuario encontrado',
+                    error: 400
+                }, 400)
+                .send();
+        }
+
         const token = JWT.sign(String(user.id), env.TOKEN_SECRET);
 
         user.password = undefined;
@@ -57,6 +67,12 @@ class UserController {
             .send();
     }
 
+    async me(request: RequestApplication, response: Response) {
+        return ResponseUtils
+            .of(response)
+            .createSuccess(request.userAuth)
+            .send();
+    }
 }
 
 export default new UserController();

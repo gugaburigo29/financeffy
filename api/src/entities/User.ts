@@ -15,6 +15,9 @@ class User extends BaseEntity {
     @Column()
     email: string;
 
+    @Column()
+    image: string;
+
     @Column({select: false})
     cpf: string;
 

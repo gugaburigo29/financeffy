@@ -9,7 +9,7 @@ class AuthMiddleware implements Middleware {
 
     async use(request: RequestApplication, response: Response, next: NextFunction): Promise<void> {
         const token = request.header('X-AUTH-TOKEN');
-        const queryToken = request.query['authToken'];
+        const queryToken = request.query['token'];
 
         if (!token && !queryToken) {
             return next({
