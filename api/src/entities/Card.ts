@@ -29,6 +29,9 @@ class Card extends BaseEntity {
     public cvv: string;
 
     @Column()
+    public number: string;
+
+    @Column()
     public expiresDate: Date;
 
     @Column(type => Balance)

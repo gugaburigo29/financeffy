@@ -2,6 +2,7 @@ import * as Express from "express"
 import {Bootstrap} from "./bootstrap";
 import UserRouter from "./routes/UserRouter";
 import * as cors from "cors";
+import * as morgan from "morgan";
 import ErrorHandlerMiddleware from "./middlewares/ErrorHandlerMiddleware";
 import CardRouter from "./routes/CardRouter";
 import CategoryRouter from "./routes/CategoryRouter";
@@ -28,6 +29,7 @@ class App {
         this.app.use(cors())
         this.app.use(Express.urlencoded({extended: false}));
         this.app.use(Express.json({limit: '50mb'}));
+        this.app.use(morgan(':method :url :status :res[content-length] - :response-time ms'))
     }
 
     private startAfterMiddlewares() {
